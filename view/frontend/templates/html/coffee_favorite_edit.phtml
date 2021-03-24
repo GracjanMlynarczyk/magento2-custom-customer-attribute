@@ -1,0 +1,16 @@
+<?php
+
+/** @var Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getData('viewModel');
+
+?>
+
+<div class="field coffee_favorite">
+    <label class="label" for="phone_number">
+        <span><?= $block->escapeHtml(__('Favorite Coffee')) ?></span>
+    </label>
+    <div class="control">
+        <input type="text" name="coffee_favorite" id="coffee_favorite" value="<?= $viewModel->getCoffeeAttribute() ?>" title="<?= $block->escapeHtmlAttr(__('Favorite Coffee')) ?>" class="input-text">
+    </div>
+</div>
