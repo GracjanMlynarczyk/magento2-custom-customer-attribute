@@ -4,29 +4,39 @@
 namespace Ghratzoo\CustomCustomerAttribute\Plugin;
 
 
+use Magento\Customer\Api\Data\CustomerExtension;
 use Magento\Customer\Api\Data\CustomerExtensionFactory;
 use Magento\Customer\Api\Data\CustomerExtensionInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
 
-class CustomerGetByIdPlugin
+/**
+ * Class CustomerGetExtensionAttributePlugin
+ * @package Ghratzoo\CustomCustomerAttribute\Plugin
+ */
+class CustomerGetExtensionAttributePlugin
 {
 
     /**
-     * @var CustomerExtensionFactory
+     * @var CustomerExtensionFactory|null
      */
-    private CustomerExtensionFactory $extensionFactory;
+    private ?CustomerExtensionFactory $extensionFactory;
 
     /**
-     * CustomerGetByIdPlugin constructor.
-     * @param CustomerExtensionFactory $extension
+     * CustomerGetExtensionAttributePlugin constructor.
+     * @param CustomerExtensionFactory|null $extension
      */
     public function __construct(
-        CustomerExtensionFactory $extension
+        ?CustomerExtensionFactory $extension = null
     ) {
         $this->extensionFactory = $extension;
     }
 
 
+    /**
+     * @param CustomerInterface $customer
+     * @param CustomerExtensionInterface $customerExtension
+     * @return CustomerExtension|CustomerExtensionInterface
+     */
     public function afterGetExtensionAttributes(
         CustomerInterface $customer,
         CustomerExtensionInterface $customerExtension
