@@ -1,0 +1,18 @@
+{
+    "customer_entity": {
+        "column": {
+            "profession": true
+        }
+    },
+    "customer_profession_attribute": {
+        "column": {
+            "profession_id": true,
+            "label": true,
+            "customer_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "CSTR_PROFESSION_ATTR_CSTR_ID_CSTR_ENTT_ENTT_ID": true
+        }
+    }
+}

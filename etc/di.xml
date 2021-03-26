@@ -5,5 +5,14 @@
                 type="Ghratzoo\CustomCustomerAttribute\Plugin\CustomerGetExtensionAttributePlugin"
                 sortOrder="10"/>
     </type>
+    <type name="Magento\Customer\Api\CustomerRepositoryInterface">
+        <plugin name="get_profession_attribute"
+                type="Ghratzoo\CustomCustomerAttribute\Plugin\CustomerAddProfessionAttribute"
+                sortOrder="10"/>
+    </type>
+
+    <preference for="Ghratzoo\CustomCustomerAttribute\Api\ProfessionRepositoryInterface" type="Ghratzoo\CustomCustomerAttribute\Service\ProfessionRepository"/>
+    <preference for="Ghratzoo\CustomCustomerAttribute\Api\Data\ProfessionSearchResultInterface" type="Ghratzoo\CustomCustomerAttribute\Model\ResourceModel\Profession\Collection"/>
+    <preference for="Ghratzoo\CustomCustomerAttribute\Api\Data\ProfessionInterface" type="Ghratzoo\CustomCustomerAttribute\Model\Profession"/>
 </config>
 
